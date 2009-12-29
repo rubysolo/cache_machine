@@ -86,7 +86,7 @@ class CacheMachine
     end
 
     def log_key_and_options(key, options)
-      returning key do |msg|
+      returning key.dup do |msg|
         msg << " (#{options.inspect})" unless options.empty?
       end
     end
